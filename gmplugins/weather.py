@@ -15,11 +15,12 @@ class Weather(Plugin):
         res = requests.get(f"http://wttr.in/{args.city}", params={"format": "j1"})
         data = res.json()
         temp = data["current_condition"][0]["temp_C"]
+        weather_description = data["current_condition"][0]["weatherDesc"][0]["value"]
 
         icon = "\uf76b"  # fontawesome icon "temperature-low"
         txt = f"{temp}°C"
         txtclick = f"xfce4-terminal -e 'curl http://wttr.in/{args.city}' --hold"
-        tool = None
+        tool = weather_description
         return Output(icon, txt, txtclick, tool)
 
 
