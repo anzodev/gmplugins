@@ -26,7 +26,7 @@ class NetTraffic(Plugin):
                 "\n".join(
                     [
                         itf,
-                        "\n".join([f"    {k}: {v}" for k, v in data._asdict().items()]),
+                        "\n".join([f"  {k}: {v}" for k, v in data._asdict().items()]),
                     ]
                 )
                 for itf, data in io_counters.items()
