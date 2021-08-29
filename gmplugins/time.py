@@ -11,12 +11,15 @@ class Time(Plugin):
         parser.add_argument(
             "-f", "--format", type=str, metavar="str", default="%Y-%m-%d %H:%M:%S"
         )
+        parser.add_argument("--disable-dayplanner", action="store_true")
 
     def _make_output(self, args: Namespace) -> Output:
+        current_date = datetime.datetime.now()
+
         icon = "\uf017"  # fontawesome icon "clock"
-        txt = datetime.datetime.now().strftime(args.format)
-        txtclick = "dayplanner"
-        tool = "Time"
+        txt = current_date.strftime(args.format)
+        txtclick = None if args.disable_dayplanner else "dayplanner"
+        tool = current_date.strftime("%A")
         return Output(icon, txt, txtclick, tool)
 
 
