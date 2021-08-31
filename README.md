@@ -16,7 +16,7 @@ To install the gmplugins package use this command:
 pip3 install git+https://github.com/anzodev/gmplugins.git@master#egg=gmplugins
 ```
 
-You can create a separate Python virtual environment for the gmplugins package. I think this is the preferred installation method (pay attenntion to [pyenv](https://github.com/pyenv/pyenv) or [venv](https://docs.python.org/3/library/venv.html) tools).
+You can create a separate Python virtual environment for the gmplugins package. I think this is the preferred installation method (pay attention to [pyenv](https://github.com/pyenv/pyenv) or [venv](https://docs.python.org/3/library/venv.html) tools).
 
 
 ## Plugins
